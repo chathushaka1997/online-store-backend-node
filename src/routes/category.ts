@@ -7,5 +7,5 @@ export function initCategoryRoutes(app:Express){
     /* app.post('/api/public/login',UserEp.loginUser)
 
     */
-    app.get('/api/auth/category/get',CategoryEp.getCategories) 
+    app.get('/api/public/category/get',CategoryEp.getCategories) 
 }

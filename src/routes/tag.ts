@@ -8,5 +8,5 @@ export function initTagRoutes(app:Express){
     /* app.post('/api/public/login',UserEp.loginUser)
 
     */
-    app.get('/api/auth/tag/get',TagEp.getTags) 
+    app.get('/api/public/tag/get',TagEp.getTags) 
 }

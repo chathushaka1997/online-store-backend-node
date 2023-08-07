@@ -9,5 +9,5 @@ export function initProductRoutes(app:Express){
     /* app.post('/api/public/login',UserEp.loginUser)
 
     */
-    app.get('/api/auth/product/get',ProductEp.getProducts) 
+    app.get('/api/public/product/get',ProductEp.getProducts) 
 }

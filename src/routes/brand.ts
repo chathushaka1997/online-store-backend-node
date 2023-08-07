@@ -8,5 +8,5 @@ export function initBrandRoutes(app:Express){
     /* app.post('/api/public/login',UserEp.loginUser)
 
     */
-    app.get('/api/auth/brand/get',BrandEp.getBrands) 
+    app.get('/api/public/brand/get',BrandEp.getBrands) 
 }
