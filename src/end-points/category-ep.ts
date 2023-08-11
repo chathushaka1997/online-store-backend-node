@@ -8,7 +8,18 @@ export namespace CategoryEp {
 
       const categoryData = req.body;
       const createCategory = await CategoryDao.createCategory(categoryData);
-      res.sendSuccess(createCategory, "Brand created!", 201);
+      res.sendSuccess(createCategory, "Category created!", 201);
+    } catch (error) {
+      console.log("Error ----> " + error);
+      res.sendError("Error " + error, 400);
+    }
+  }
+
+  export async function updateCategory(req: Request, res: Response, next: NextFunction) {
+    try {
+      const categoryData = req.body;
+      const updateCategory = await CategoryDao.updateCategory(categoryData._id, categoryData);
+      res.sendSuccess(updateCategory, "Category updated!", 200);
     } catch (error) {
       console.log("Error ----> " + error);
       res.sendError("Error " + error, 400);
@@ -23,7 +34,7 @@ export namespace CategoryEp {
       }
 
       const categories = await CategoryDao.getCategories(searchTerm);
-      res.sendSuccess(categories, "Brands retrireve!");
+      res.sendSuccess(categories, "Category retrireve!");
     } catch (error) {
       console.log("Error ----> " + error);
       res.sendError("Error " + error, 400);

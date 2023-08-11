@@ -5,6 +5,7 @@ import { TagEp } from "../end-points/tag-ep";
 
 export function initTagRoutes(app:Express){
    app.post('/api/auth/tag/create',TagEp.createTag)
+   app.post('/api/auth/tag/update',TagEp.updateTag)
     /* app.post('/api/public/login',UserEp.loginUser)
 
     */

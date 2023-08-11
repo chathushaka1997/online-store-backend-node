@@ -16,6 +16,17 @@ export namespace TagEp {
     }
   }
 
+  export async function updateTag(req: Request, res: Response, next: NextFunction) {
+    try {
+      const tagData = req.body;
+      const updateTag = await TagDao.updateCategory(tagData._id, tagData);
+      res.sendSuccess(updateTag, "Tag updated!", 200);
+    } catch (error) {
+      console.log("Error ----> " + error);
+      res.sendError("Error " + error, 400);
+    }
+  }
+
   export async function getTags(req: Request, res: Response, next: NextFunction) {
     try {
         let searchTerm =  "";
